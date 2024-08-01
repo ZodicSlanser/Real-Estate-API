@@ -92,7 +92,7 @@
 
 1. **Import the Postman Collection**:
    - Open Postman.
-   - Click on "Import" and upload the `real_estate_api_postman_collection.json` file.
+   - Click on "Import" and upload the `real.estate.api.postman_collection.json` file.
 
 2. **Set Base URL in Postman**:
    - Click on "Environments" and create a new environment.
