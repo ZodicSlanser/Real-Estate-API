@@ -76,6 +76,11 @@
      php artisan migrate
      ```
 
+3. **Seed the database**:
+     ```bash
+     php artisan db:seed
+     ```
+
 ### Step 5: Serve the Application
 
 1. **Start the Development Server**:
