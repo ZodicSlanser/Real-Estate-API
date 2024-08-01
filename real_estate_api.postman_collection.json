@@ -1,334 +1,360 @@
 {
-	"info": {
-		"_postman_id": "01e45dfc-a575-4a39-805c-0049d23e9bca",
-		"name": "Real Estate API",
-		"description": "Postman collection for the Real Estate API with CRUD operations for owners and houses.",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "26154562",
-		"_collection_link": "https://www.postman.com/zodic-team-1901/workspace/vero/collection/26154562-01e45dfc-a575-4a39-805c-0049d23e9bca?action=share&source=collection_link&creator=26154562"
-	},
-	"item": [
-		{
-			"name": "Owners",
-			"item": [
-				{
-					"name": "Create Owner",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"fullname\": \"John Doe\",\n    \"email\": \"john.doe@example.com\",\n    \"phone_number\": \"1234567890\"\n}"
-						},
-						"url": {
-							"raw": "{{base_url}}/api/owners",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"owners"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get All Owners",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/api/owners",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"owners"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get Owner",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/api/owners/:ownerId",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"owners",
-								":ownerId"
-							],
-							"variable": [
-								{
-									"key": "ownerId",
-									"value": "1"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Update Owner",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"fullname\": \"Jane Doe\",\n    \"email\": \"jane.doe@example.com\",\n    \"phone_number\": \"0987654321\"\n}"
-						},
-						"url": {
-							"raw": "{{base_url}}/api/owners/:ownerId",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"owners",
-								":ownerId"
-							],
-							"variable": [
-								{
-									"key": "ownerId",
-									"value": "1"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Delete Owner",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/api/owners/:ownerId",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"owners",
-								":ownerId"
-							],
-							"variable": [
-								{
-									"key": "ownerId",
-									"value": "1"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get Houses by Owner",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/api/owners/:ownerId/houses",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"owners",
-								":ownerId",
-								"houses"
-							],
-							"variable": [
-								{
-									"key": "ownerId",
-									"value": "1"
-								}
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Houses",
-			"item": [
-				{
-					"name": "Create House",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"owner_id\": 1,\n    \"house_type\": \"Villa\",\n    \"availability\": true,\n    \"total_area\": 250,\n    \"number_of_bedrooms\": 4,\n    \"number_of_bathrooms\": 3,\n    \"main_picture\": \"main_picture_url\",\n    \"images\": [\n        {\n            \"image_url\": \"image1_url\",\n            \"is_360\": false\n        },\n        {\n            \"image_url\": \"image2_url\",\n            \"is_360\": true\n        }\n    ]\n}"
-						},
-						"url": {
-							"raw": "{{base_url}}/api/houses",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"houses"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get All Houses",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/api/houses",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"houses"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get House",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/api/houses/:houseId",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"houses",
-								":houseId"
-							],
-							"variable": [
-								{
-									"key": "houseId",
-									"value": "1"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Update House",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"house_type\": \"Chalet\",\n    \"availability\": false,\n    \"total_area\": 200,\n    \"number_of_bedrooms\": 3,\n    \"number_of_bathrooms\": 2,\n    \"main_picture\": \"updated_main_picture_url\",\n    \"images\": [\n        {\n            \"image_url\": \"updated_image1_url\",\n            \"is_360\": false\n        }\n    ]\n}"
-						},
-						"url": {
-							"raw": "{{base_url}}/api/houses/:houseId",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"houses",
-								":houseId"
-							],
-							"variable": [
-								{
-									"key": "houseId",
-									"value": "1"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Delete House",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/api/houses/:houseId",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"houses",
-								":houseId"
-							],
-							"variable": [
-								{
-									"key": "houseId",
-									"value": "1"
-								}
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		}
-	],
-	"event": [
-		{
-			"listen": "prerequest",
-			"script": {
-				"type": "text/javascript",
-				"packages": {},
-				"exec": [
-					""
-				]
-			}
-		},
-		{
-			"listen": "test",
-			"script": {
-				"type": "text/javascript",
-				"packages": {},
-				"exec": [
-					""
-				]
-			}
-		}
-	],
-	"variable": [
-		{
-			"key": "base_url",
-			"value": "http://127.0.0.1:8000"
-		}
-	]
+    "info": {
+        "_postman_id": "01e45dfc-a575-4a39-805c-0049d23e9bca",
+        "name": "Real Estate API",
+        "description": "Postman collection for the Real Estate API with CRUD operations for owners and houses.",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "_exporter_id": "26154562",
+        "_collection_link": "https://www.postman.com/zodic-team-1901/workspace/vero/collection/26154562-01e45dfc-a575-4a39-805c-0049d23e9bca?action=share&source=collection_link&creator=26154562"
+    },
+    "item": [
+        {
+            "name": "Owners",
+            "item": [
+                {
+                    "name": "Create Owner",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"fullname\": \"John Doe\",\n    \"email\": \"john.doe@example.com\",\n    \"phone_number\": \"1234567890\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/api/owners",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "owners"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get All Owners",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/api/owners",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "owners"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Owner",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/api/owners/:ownerId",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "owners",
+                                ":ownerId"
+                            ],
+                            "variable": [
+                                {
+                                    "key": "ownerId",
+                                    "value": "1"
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update Owner",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"fullname\": \"Jane Doe\",\n    \"email\": \"jane.doe@example.com\",\n    \"phone_number\": \"0987654321\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/api/owners/:ownerId",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "owners",
+                                ":ownerId"
+                            ],
+                            "variable": [
+                                {
+                                    "key": "ownerId",
+                                    "value": "1"
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete Owner",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/api/owners/:ownerId",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "owners",
+                                ":ownerId"
+                            ],
+                            "variable": [
+                                {
+                                    "key": "ownerId",
+                                    "value": "1"
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Houses by Owner",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/api/owners/:ownerId/houses",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "owners",
+                                ":ownerId",
+                                "houses"
+                            ],
+                            "variable": [
+                                {
+                                    "key": "ownerId",
+                                    "value": "1"
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Houses",
+            "item": [
+                {
+                    "name": "Create House",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"owner_id\": 1,\n    \"house_type\": \"Villa\",\n    \"availability\": 1,\n    \"total_area\": 250,\n    \"number_of_bedrooms\": 4,\n    \"number_of_bathrooms\": 3,\n    \"main_picture\": \"main_picture_url\",\n    \"images\": [\n        {\n            \"image_url\": \"image1_url\",\n            \"is_360\": false\n        },\n        {\n            \"image_url\": \"image2_url\",\n            \"is_360\": true\n        }\n    ]\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/api/houses",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "houses"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get All Houses",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/api/houses",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "houses"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get House",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/api/houses/:houseId",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "houses",
+                                ":houseId"
+                            ],
+                            "variable": [
+                                {
+                                    "key": "houseId",
+                                    "value": "1"
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update House",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"house_type\": \"Chalet\",\n    \"availability\": 2,\n    \"total_area\": 200,\n    \"number_of_bedrooms\": 3,\n    \"number_of_bathrooms\": 2,\n    \"main_picture\": \"updated_main_picture_url\",\n    \"images\": [\n        {\n            \"image_url\": \"updated_image1_url\",\n            \"is_360\": false\n        }\n    ]\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/api/houses/:houseId",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "houses",
+                                ":houseId"
+                            ],
+                            "variable": [
+                                {
+                                    "key": "houseId",
+                                    "value": "1"
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete House",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/api/houses/:houseId",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "houses",
+                                ":houseId"
+                            ],
+                            "variable": [
+                                {
+                                    "key": "houseId",
+                                    "value": "1"
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Houses by Availability",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/api/houses/availability/:availability",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "houses",
+                                "availability",
+                                ":availability"
+                            ],
+                            "variable": [
+                                {
+                                    "key": "availability",
+                                    "value": "1"
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        }
+    ],
+    "event": [
+        {
+            "listen": "prerequest",
+            "script": {
+                "type": "text/javascript",
+                "packages": {},
+                "exec": [
+                    ""
+                ]
+            }
+        },
+        {
+            "listen": "test",
+            "script": {
+                "type": "text/javascript",
+                "packages": {},
+                "exec": [
+                    ""
+                ]
+            }
+        }
+    ],
+    "variable": [
+        {
+            "key": "base_url",
+            "value": "http://127.0.0.1:8000"
+        }
+    ]
 }

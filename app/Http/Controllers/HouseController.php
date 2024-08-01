@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\House;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class HouseController extends Controller
 {
@@ -17,7 +18,7 @@ class HouseController extends Controller
         $request->validate([
             'owner_id' => 'required|exists:owners,id',
             'house_type' => 'required|in:Chalet,Twin House,Villa',
-            'availability' => 'required|boolean',
+            'availability' => ['required', Rule::in([0, 1, 2])],
             'total_area' => 'required|integer',
             'number_of_bedrooms' => 'required|integer',
             'number_of_bathrooms' => 'required|integer',
@@ -47,7 +48,7 @@ class HouseController extends Controller
     {
         $request->validate([
             'house_type' => 'sometimes|required|in:Chalet,Twin House,Villa',
-            'availability' => 'sometimes|required|boolean',
+            'availability' => ['sometimes', 'required', Rule::in([0, 1, 2])],
             'total_area' => 'sometimes|required|integer',
             'number_of_bedrooms' => 'sometimes|required|integer',
             'number_of_bathrooms' => 'sometimes|required|integer',
@@ -74,4 +75,11 @@ class HouseController extends Controller
         $house->delete();
         return response()->noContent();
     }
+
+    public function getByAvailability($availability)
+{
+    $houses = House::with('images', 'owner')->where('availability', $availability)->get();
+    return $houses;
+}
+
 }
