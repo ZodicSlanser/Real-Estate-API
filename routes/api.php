@@ -10,4 +10,6 @@ use App\Http\Controllers\OwnerController;
 Route::apiResource('owners', OwnerController::class);
 Route::apiResource('houses', HouseController::class);
 Route::get('owners/{owner}/houses', [OwnerController::class, 'houses']);
+Route::get('/houses/availability/{availability}', [HouseController::class, 'getByAvailability']);
+
 
