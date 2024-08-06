@@ -8,7 +8,8 @@ class Owner extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['fullname', 'email', 'phone_number'];
+    protected $fillable = ['fullname', 'email', 'phone_number', 'description'];
+    
 
     public function houses()
     {

@@ -18,6 +18,7 @@ class OwnerController extends Controller
             'fullname' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:owners',
             'phone_number' => 'required|string|max:15',
+            'description' => 'string|max:255',
         ]);
 
         return Owner::create($request->all());
